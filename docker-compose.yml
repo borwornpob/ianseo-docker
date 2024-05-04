@@ -1,0 +1,20 @@
+version: "3"
+services:
+    db:
+        image: mariadb:10.3
+        environment:
+            - MARIADB_USER=ianseo
+            - MARIADB_PASSWORD=ianseo
+            - MARIADB_DATABASE=ianseo
+            - MARIADB_ROOT_PASSWORD=ianseo
+        volumes:
+            - ./db:/var/lib/mysql
+        ports:
+            - "3306:3306"
+
+    ianseo:
+        image: arqueria/ianseo:latest
+        ports:
+            - "8080:80"
+        depends_on:
+            - db
