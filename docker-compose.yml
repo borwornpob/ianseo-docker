@@ -15,6 +15,6 @@ services:
     ianseo:
         image: arqueria/ianseo:latest
         ports:
-            - "8080:80"
+            - "12345:80"
         depends_on:
             - db
